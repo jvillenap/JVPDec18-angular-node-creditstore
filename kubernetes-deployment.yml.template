@@ -5,9 +5,9 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: rest-jscreditscoreJVP1
+  name: rest-jscreditscorejvp1
   labels:
-    run: rest-jscreditscoreJVP1
+    run: rest-jscreditscorejvp1
 spec:
   replicas: 1
   strategy:
@@ -18,12 +18,12 @@ spec:
   template:
     metadata:
       labels:
-        run: rest-jscreditscoreJVP1
+        run: rest-jscreditscorejvp1
     spec:
       containers:
       - image: $DOCKER_REPO:$WERCKER_GIT_BRANCH-$WERCKER_GIT_COMMIT
         imagePullPolicy: Always
-        name: rest-jscreditscoreJVP1
+        name: rest-jscreditscorejvp1
         ports:
         - containerPort: 3000
           protocol: TCP
@@ -34,10 +34,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: rest-jscreditscore-svcJVP1
+  name: rest-jscreditscore-svcjvp1
 spec:
   selector:
-    run: rest-jscreditscoreJVP1
+    run: rest-jscreditscorejvp1
   ports:
     - port: 8188
       targetPort: 3000
